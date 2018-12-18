@@ -113,7 +113,7 @@ public class TestCase {
 	    int freq;
 	    System.out.println("checking s4.B183362.Frequencer White box test");
 		myObject = new s4.B183362.Frequencer();
-		myObject.setSpace("aaaaaaaa ".getBytes());
+		myObject.setSpace("aaaaaaaa".getBytes());
 	    myObject.setTarget("aa".getBytes());
 	    freq = myObject.frequency();
 	    System.out.print("\"aa\" in \"aaaaaaaa \" appears "+freq+" times. ");
@@ -123,6 +123,23 @@ public class TestCase {
 	catch(Exception e) {
 	    System.out.println("Exception occurred: STOP");
 	}
+
+	try {
+	    FrequencerInterface  myObject;
+	    int freq;
+	    System.out.println("checking s4.B183362.Frequencer White box test");
+		myObject = new s4.B183362.Frequencer();
+		myObject.setSpace("aaaaaaaa".getBytes());
+	    myObject.setTarget("aa".getBytes());
+	    freq = myObject.frequency();
+	    System.out.print("\"aa\" in \"aaaaaaaa \" appears "+freq+" times. ");
+		if(4 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
+		
+	}
+	catch(Exception e) {
+	    System.out.println("Exception occurred: STOP");
+	}
+
 
 	try {
 	    InformationEstimatorInterface myObject;
@@ -142,31 +159,59 @@ public class TestCase {
 	    myObject.setTarget("00".getBytes());
 	    value = myObject.estimation();
 		System.out.println(">00 "+value);
+	}
+	catch(Exception e) {
+	    System.out.println("Exception occurred: STOP");
+	}
 
-		//add Test case : Target is not set
+	try {
+		InformationEstimatorInterface myObject;
+		double value;
+		System.out.println("checking s4.B183362.InformationEstimator Black box test : Target is not set");	
 		myObject = new s4.B183362.InformationEstimator();
 	    myObject.setSpace("3210321001230123".getBytes());
 		value = myObject.estimation();
 		System.out.println("TARGET is not set : return "+value);
 		if(0.0 == value){System.out.println("OK");}else{System.out.println("WRONG");}
+	}
+	catch(Exception e) {
+	    System.out.println("Exception occurred: STOP");
+	}
 
-		//add Test case : TARGET's length is zero
+	try {
+		InformationEstimatorInterface myObject;
+		double value;
+		System.out.println("checking s4.B183362.InformationEstimator Black box test : TARGET's length is zero");
 		myObject = new s4.B183362.InformationEstimator();
 	    myObject.setSpace("3210321001230123".getBytes());
 	    myObject.setTarget("".getBytes());
 		value = myObject.estimation();
 		System.out.println("TARGET's length is zero : return "+value);
 		if(0.0 == value){System.out.println("OK");}else{System.out.println("WRONG");}
+	}
+	catch(Exception e) {
+	    System.out.println("Exception occurred: STOP");
+	}
 
-		//add Test case : true value is infinite
+	try {
+		InformationEstimatorInterface myObject;
+		double value;
+		System.out.println("checking s4.B183362.InformationEstimator Black box test : true value is infinite");
 		myObject = new s4.B183362.InformationEstimator();
 	    myObject.setSpace("".getBytes());
 	    myObject.setTarget("0".getBytes());
 		value = myObject.estimation();
 		System.out.println("true value is infinite : return "+value);
 		if(Double.MAX_VALUE == value){System.out.println("OK");}else{System.out.println("WRONG");}
+	}
+	catch(Exception e) {
+	    System.out.println("Exception occurred: STOP");
+	}
 
-		//add Test case : space is not set
+	try {
+		InformationEstimatorInterface myObject;
+		double value;
+		System.out.println("checking s4.B183362.InformationEstimator Black box test : space is not set");
 		myObject = new s4.B183362.InformationEstimator();
 	    myObject.setTarget("0".getBytes());
 		value = myObject.estimation();
