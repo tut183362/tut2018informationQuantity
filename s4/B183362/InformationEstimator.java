@@ -94,19 +94,21 @@ public class InformationEstimator implements InformationEstimatorInterface{
 		double tmp;
 		
 		for(int k=0; k < myTarget.length; k++ ){
-			result = 0.0;
+			result = Double.MAX_VALUE;
 			for(int l = 0; l <= k; l++)
 			{
 				myFrequencer.setTarget(subBytes(myTarget, l, k+1));
 				if(l==0){
-					result = iq(myFrequencer.frequency());
+					tmp = iq(myFrequencer.frequency());
 				}
 				else{
 					tmp = iqr[l-1] + iq(myFrequencer.frequency());
-					if(result > tmp){
-						result = tmp;
-					}
 				}
+
+				if(result > tmp){
+					result = tmp;
+				}
+
 			}
 			iqr[k] = result;
 		}
