@@ -1,8 +1,6 @@
 package s4.B183362;
 import java.lang.*;
 import s4.specification.*;
-import sun.security.action.GetIntegerAction;
-
 
 /*package s4.specification;
 
@@ -244,12 +242,12 @@ public class Frequencer implements FrequencerInterface{
 	       A:o Hi Ho
 	    */
 
-	    frequencerObject.setTarget("Ho".getBytes());
+	    frequencerObject.setTarget("H".getBytes());
 	    //
 	    // ****  Please write code to check subByteStartIndex, and subByteEndIndex
 	    //
-		int start = frequencerObject.subByteStartIndex(0, 2);
-		int end   = frequencerObject.subByteEndIndex(0, 2);
+		int start = frequencerObject.subByteStartIndex(0, 1);
+		int end   = frequencerObject.subByteEndIndex(0, 1);
 		System.out.println("start = " +start+" end = "+end+" " );
 		if(start == 3 && end == 7){System.out.println("OK");} else {System.out.println("WRONG"); }
 
