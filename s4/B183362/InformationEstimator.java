@@ -86,11 +86,11 @@ public class InformationEstimator implements InformationEstimatorInterface{
 	}*/
 	
 	public double estimation(){
-		//部分文字列の情報量の格納配列
+		
 		double[] iqr = new double[myTarget.length];
-		//情報量の格納変数
+		
 		double result;
-		//一時的な計算結果の格納変数
+		
 		double tmp;
 		
 		for(int k=0; k < myTarget.length; k++ ){
